@@ -1,0 +1,80 @@
+<html>
+<head>
+<!-- This imports the magic script -- don't touch! -->
+    <script src="https://cdn.jsdelivr.net/gh/tuftsceeo/SPIKE-Web-Interface/cdn/ServiceDock.js"
+    type="text/javascript"></script>
+    <script src="airtable_script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+<!-- --------------------------------------------- -->
+</head>
+<body style="background-color: none">
+
+    <!-- This creates the Airtable button -->
+    <div id="servicedock" style="float:right;">
+        <!-- IMPORTANT!!! REPLACE "apikey", "baseid", AND "tablename" attributes with your own information -->
+        <service-airtable id="service_airtable" apikey = "" baseid = "app8rjr9bqItFXUuL" tablename = "Data">
+        </service-airtable>
+    </div>
+
+    <!-- Edit your page template below: -->
+    <h1>EN1 Final Project Template!</h1>
+    <p><b>My name is:</b> enter name here </p> <!-- change your name here! -->
+    <br>
+
+    <!-- INPUTS: -->
+
+    <!-- Types of input: Button -->
+
+<!--
+    Add buttons using the button tag. The name in airtable_value
+    will be set to whatever is in between the button tag.
+    In the case of the first button below, 'action' will be set
+    to 'Slower'
+-->
+
+    <div class='buttonBlock'>
+    <p>Robot Control Buttons</p> <!-- Name your button(s) in this paragraph tag -->
+	<button airtable_value='action'>Slower</button>
+	<button airtable_value='action'>Faster</button>
+	<button airtable_value='action'>Stop</button>
+    </div>
+
+    <!-- Types of input: Slider -->
+
+<!--
+    Add sliders & buttons together by using the <input type='range'>
+    tag and the button tag. The slider can have a min/max value
+    and a starting value called 'value'. The name in airtable_value
+    will be set to the value of the slider whenever it is dragged.
+-->
+
+    <div class='sliderBlock'>
+    <p>Motor Control with Slider</p> <!-- Name your slider(s) in this paragraph tag -->
+	<button airtable_value='motor1'>Forward</button>
+	<button airtable_value='motor1'>Backward</button>
+	<button airtable_value='motor1'>Stop</button>
+    <input type="range" min="1" max="100" value="50" airtable_value='motor1_speed'>
+    </div>
+
+    <!-- Types of input: Text -->
+
+<!--
+    Add text input using the <form> tag with an <input type='text'>
+    tag inside. The form requires a submit button, which can be
+    copied and pasted below the text input tag. Make sure to use
+    1 form per 1 text input! The name in airtable_value will be
+    set to whatever the user enters into the text input.
+-->
+
+    <div class='textBlock'>
+    <p>Text Input</p> <!-- Name your text input in this paragraph tag -->
+    <form type='textinput'>
+        <input type='text' airtable_value='text_input'>
+        <input type='button' value='Submit'>
+    </form>
+    </div>
+
+<!-- That's it for the HTML side! -->
+
+</body>
+</html>

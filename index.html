@@ -1,0 +1,40 @@
+<html>
+<head>
+  <script type="text/javascript">
+
+      ///////////////////////////////////////////////////
+      //// STUDENTS, FILL IN WITH YOUR SECRET VALUE: ////
+      ///////////////////////////////////////////////////
+      var mysecret = "keyXXXXXXXXXXXXXX";
+
+      // update links with secret value
+      function setup() {
+        d = document.querySelectorAll("a");
+        for (i=0; i<d.length; i++) {
+          href = d[i].getAttribute("href");
+          d[i].setAttribute("href", href + "?mysecret=" + mysecret)
+        }
+      }
+  </script>
+</head>
+<body onload="setup();">
+
+  <h1>EN1 Final Project</h1>
+  <p>This project belongs to: <b>MY_NAME</b></p>
+
+  <h2>Tester (Remote) Interaction</h2>
+
+  <p><ul>
+    <li><a href="remote.html">Remote Example 1</a></li>
+    <li><a href="remote_simple.html">Remote Example Simple</a></li>
+  </ul></p>
+
+  <h2>SPIKE Prime (Local) Interaction</h2>
+
+  <p><ul>
+    <li><a href="SPIKE.html">SPIKE Prime Example 1</a></li>
+    <li><a href="SPIKE_simple.html">SPIKE Prime Example Simple</a></li>
+  </ul></p>
+
+</body>
+</html>
