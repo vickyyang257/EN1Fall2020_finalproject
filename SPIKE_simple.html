@@ -1,6 +1,38 @@
 <html>
-<body>
-    <h1>Coming Soon</h1>
-    <a href="index.html">Back</a>
+	<head>
+		<script src="https://cdn.jsdelivr.net/gh/tuftsceeo/SPIKE-Web-Interface/cdn/ServiceDock.js" charset="utf-8"></script>
+		<script src="airtable_script.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+<body type=local>
+
+	<div id="servicedock" style="float:right;">
+		<!-- Replace apikey, baseid, AND tablename with your own Airtable information -->
+		<service-airtable id="service_airtable"
+		  apikey = ""
+		  baseid = "BASEID_FROM_AIRTABLE"
+		  tablename = "TABLENAME_FROM_AIRTABLE"
+		></service-airtable>
+		<!-- this is SPIKE Prime Service -->
+		<service-spike id="service_spike"></service-spike>
+	</div>
+
+    <div type="airtable-check" compare="equal" action="run-slot">
+	    <input type=text id="name_val" value="action">
+	    <input type=text id="value_val" value="Forward">
+	    <input type=text id="action_val" value="0">
+	</div>
+
+    <div type="airtable-check" compare="equal" action="run-slot">
+	    <input type=text id="name_val" value="action">
+	    <input type=text id="value_val" value="Backward">
+	    <input type=text id="action_val" value="1">
+	</div>
+
+    <div type="airtable-check" compare="equal" action="stop-slot">
+	    <input type=text id="name_val" value="action">
+	    <input type=text id="value_val" value="Stop">
+	</div>
+
 </body>
 </html>
