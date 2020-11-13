@@ -1,6 +1,78 @@
 <html>
-<body>
-    <h1>Coming Soon</h1>
-    <a href="index.html">Back</a>
+	<head>
+		<script src="https://cdn.jsdelivr.net/gh/tuftsceeo/SPIKE-Web-Interface/cdn/ServiceDock.js" charset="utf-8"></script>
+		<script src="airtable_script.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+<body type=local>
+
+	<div id="servicedock" style="float:right;">
+		<!-- Replace apikey, baseid, AND tablename with your own Airtable information -->
+		<service-airtable id="service_airtable"
+		  apikey = ""
+		  baseid = "BASEID_FROM_AIRTABLE"
+		  tablename = "TABLENAME_FROM_AIRTABLE"
+		></service-airtable>
+		<!-- this is SPIKE Prime Service -->
+		<service-spike id="service_spike"></service-spike>
+	</div>
+
+    <div type="airtable-check" compare="equal" action="run-slot">
+	    <input type=text id="name_val" value="action">
+	    <input type=text id="value_val" value="Forward">
+	    <input type=text id="action_val" value="0">
+	</div>
+
+    <div type="airtable-check" compare="equal" action="run-slot">
+	    <input type=text id="name_val" value="action">
+	    <input type=text id="value_val" value="Backward">
+	    <input type=text id="action_val" value="1">
+	</div>
+
+    <div type="airtable-check" compare="equal" action="stop-slot">
+	    <input type=text id="name_val" value="action">
+	    <input type=text id="value_val" value="Stop">
+	</div>
+
+    <div type="airtable-check" compare="less-than" action="run-slot">
+	    <input type=text id="name_val" value="motor1_speed">
+	    <input type=text id="value_val" value="80">
+	    <input type=text id="action_val" value="0">
+	</div>
+
+    <div type="airtable-check" compare="greater-than" action="run-slot">
+	    <input type=text id="name_val" value="motor1_speed">
+	    <input type=text id="value_val" value="90">
+	    <input type=text id="action_val" value="1">
+	</div>
+
+    <div type="airtable-check" compare="equal" action="run-slot">
+	    <input type=text id="name_val" value="text_input">
+	    <input type=text id="value_val" value="Hello">
+	    <input type=text id="action_val" value="2">
+	    <input type=text id="reset_val" value="Goodbye">
+	</div>
+
+    <div type="airtable-check" compare="equal" action="download-code">
+	    <input type=text id="name_val" value="text_input">
+	    <input type=text id="value_val" value="code">
+	    <input type=text id="action_val" value="3">
+	    <textarea id="code_val">from spike import Motor
+b = Motor('B')
+b.start(40)
+yield(2000)
+b.stop()</textarea>
+	</div>
+
+    <div type="airtable-check" compare="changes" action="run-slot">
+	    <input type=text id="name_val" value="action">
+	    <input type=text id="action_val" value="3">
+	</div>
+
+	 
+    <p>[ <a href="" onclick="return refresh_embedded_airtable();">refresh airtable data</a> ]</p>
+    <!-- AIRTABLE EMBED: copy "Share view" code, change size to width="600" height="400" -->
+    <iframe class="airtable-embed" src="https://airtable.com/embed/XXXXXXXXXXXX?backgroundColor=cyan&viewControls=on" frameborder="0" onmousewheel="" width="600" height="400" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
 </body>
 </html>

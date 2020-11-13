@@ -43,3 +43,20 @@ https://www.w3schools.com/css/default.asp
     padding-left: 40px;
     width:30%;
 }
+
+.airtable_active {
+	background-color: lightgreen;
+	padding: 5px;
+}
+.airtable_active td {
+	padding: 5px;
+	vertical-align: top;
+}
+.airtable_inactive {
+	background-color: none;
+	padding: 5px;
+}
+.airtable_inactive td {
+	padding: 5px;
+	vertical-align: top;
+}
