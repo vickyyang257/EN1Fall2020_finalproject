@@ -20,6 +20,7 @@ https://www.w3schools.com/css/default.asp
     width:30%;
 }
 
+
 .sliderBlock{
     /*Give your slider block some style!
     Add color, change the border, and
@@ -50,7 +51,7 @@ https://www.w3schools.com/css/default.asp
 }
 .airtable_active td {
 	padding: 5px;
-	vertical-align: top;
+	vertical-align: bottom;
 }
 .airtable_inactive {
 	background-color: none;
@@ -59,4 +60,24 @@ https://www.w3schools.com/css/default.asp
 .airtable_inactive td {
 	padding: 5px;
 	vertical-align: top;
+}
+.airtable_inactive {
+	background-color: none;
+	padding: 5px;
+}
+.airtable_inactive td {
+	padding: 5px;
+	vertical-align: right;
+}
+.airtable_inactive {
+	background-color: none;
+	padding: 5px;
+}
+.airtable_inactive td {
+	padding: 5px;
+	vertical-align: left;
+}
+.airtable_inactive {
+	background-color: none;
+	padding: 5px;
 }
